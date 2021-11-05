@@ -44,7 +44,7 @@ public class UserService extends ServiceImpl<UserMapper, User>{
     }
     public void setToken(String token, User user){
 
-        redisUtil.set(USER_PREFIX+token,user,2*60*1000L);
+        redisUtil.set(USER_PREFIX+token,user,2*60*60L);
     }
     public void delToken(String token){
         redisUtil.del(USER_PREFIX+token);

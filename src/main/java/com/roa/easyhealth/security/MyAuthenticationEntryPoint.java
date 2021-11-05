@@ -2,6 +2,7 @@ package com.roa.easyhealth.security;
 
 import com.roa.easyhealth.entity.result.MyResult;
 import com.roa.easyhealth.exception.MyException;
+import com.roa.easyhealth.util.ResponseUtil;
 import lombok.SneakyThrows;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -15,6 +16,6 @@ public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @SneakyThrows
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
-        throw new MyException(MyResult.UNAUTHORIZED().setDataMessage("未登录"));
+        ResponseUtil.responseReturnJson(httpServletResponse, MyResult.UNAUTHORIZED().setDataMessage("未登录"));
     }
 }

@@ -100,6 +100,7 @@
             <version>9.0.53</version>
         </dependency>
 
+
     </dependencies>
 
 
@@ -146,19 +147,6 @@
             </plugin>
         </plugins>
     </build>
-    <profiles>
-        <profile>
-            <id>local</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-devtools</artifactId>
-                    <scope>runtime</scope>
-                    <optional>true</optional>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
     <repositories>
         <repository>
             <id>spring-releases</id>
@@ -181,6 +169,17 @@
     </pluginRepositories>
 
     <profiles>
+        <profile>
+            <id>local</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-devtools</artifactId>
+                    <scope>runtime</scope>
+                    <optional>true</optional>
+                </dependency>
+            </dependencies>
+        </profile>
         <profile>
             <id>native</id>
             <properties>
